@@ -1,5 +1,5 @@
 import prisma from '@utils/prisma';
-import gCall from '../../utils/gCall';
+import gCall from '@test_utils/gCall';
 
 describe('Me', () => {
   const loginMutation = `

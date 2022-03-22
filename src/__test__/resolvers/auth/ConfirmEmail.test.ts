@@ -1,5 +1,5 @@
 import redis from '@utils/redis';
-import gCall from '../../utils/gCall';
+import gCall from '@test_utils/gCall';
 import prisma from '@utils/prisma';
 
 const confirmEmailMutation = `
