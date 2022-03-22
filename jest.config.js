@@ -12,7 +12,6 @@ module.exports = {
     '^@middleware/(.*)$': '<rootDir>/src/middleware/$1',
     '^@validators/(.*)$': '<rootDir>/src/validators/$1',
   },
-  // setupFiles: ['<rootDir>/src/__test__/utils/dotenv-config.ts'],
   collectCoverage: true,
   testSequencer: '<rootDir>/src/__test__/utils/testSequencer.js',
   setupFiles: ['<rootDir>/jest.setup.ts'],

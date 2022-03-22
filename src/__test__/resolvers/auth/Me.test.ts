@@ -1,3 +1,4 @@
+import prisma from '@utils/prisma';
 import gCall from '../../utils/gCall';
 
 describe('Me', () => {
@@ -20,6 +21,7 @@ describe('Me', () => {
   `;
 
   it('gets logged in user', async () => {
+    const user = await prisma.user.findUnique({ where: { username: 'jest' } });
     await gCall({
       source: loginMutation,
       variableValues: {
@@ -29,7 +31,7 @@ describe('Me', () => {
     });
     const data = await gCall({
       source: meQuery,
-      userId: 1,
+      userId: user?.id,
     });
     expect(data).toMatchObject({
       data: {

@@ -14,18 +14,8 @@ class CustomSequencer extends Sequencer {
     const [registerTests, registerTest] = getTest(copyTests, 'Register.test.ts');
     const [confirmEmailTests, confirmEmailTest] = getTest(registerTests, 'ConfirmEmail.test.ts');
     const [loginTests, loginTest] = getTest(confirmEmailTests, 'Login.test.ts');
-    const [createWorkoutTests, createWorkoutTest] = getTest(loginTests, 'CreateWorkout.test.ts');
-    const [updateWorkoutTests, updateWorkoutTest] = getTest(createWorkoutTests, 'UpdateWorkout.test.ts');
-    const [deleteWorkoutTests, deleteWorkoutTest] = getTest(updateWorkoutTests, 'DeleteWorkout.test.ts');
-    const testSequence = [
-      registerTest,
-      confirmEmailTest,
-      loginTest,
-      createWorkoutTest,
-      ...deleteWorkoutTests.sort((testA, testB) => (testA.path > testB.path ? 1 : -1)),
-      updateWorkoutTest,
-      deleteWorkoutTest,
-    ];
+    const [resetPasswordTests, resetPasswordTest] = getTest(loginTests, 'ResetPassword.test.ts');
+    const testSequence = [registerTest, confirmEmailTest, loginTest, ...resetPasswordTests.sort((testA, testB) => (testA.path > testB.path ? 1 : -1)), resetPasswordTest];
     return testSequence;
   }
 }
