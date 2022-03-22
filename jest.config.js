@@ -11,9 +11,10 @@ module.exports = {
     '^@types/(.*)$': '<rootDir>/src/types/$1',
     '^@middleware/(.*)$': '<rootDir>/src/middleware/$1',
     '^@validators/(.*)$': '<rootDir>/src/validators/$1',
+    '^@test_utils/(.*)$': '<rootDir>/src/__test__/__utils__/$1',
   },
   collectCoverage: true,
-  testSequencer: '<rootDir>/src/__test__/utils/testSequencer.js',
+  testSequencer: '<rootDir>/src/__test__/__utils__/testSequencer.js',
   setupFiles: ['<rootDir>/jest.setup.ts'],
   detectOpenHandles: true,
 };

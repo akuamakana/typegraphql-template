@@ -1,4 +1,4 @@
-import gCall from '../../utils/gCall';
+import gCall from '@test_utils/gCall';
 
 const logoutMutation = `
 mutation Logout {

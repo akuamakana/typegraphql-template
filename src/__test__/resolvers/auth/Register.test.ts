@@ -1,4 +1,4 @@
-import gCall from '../../utils/gCall';
+import gCall from '@test_utils/gCall';
 
 jest.mock('@utils/sendEmail', () => ({
   sendEmail: jest.fn(() => true),

@@ -1,5 +1,5 @@
 import argon2 from 'argon2';
-import gCall from '../../utils/gCall';
+import gCall from '@test_utils/gCall';
 import prisma from '@utils/prisma';
 
 const loginMutation = `
