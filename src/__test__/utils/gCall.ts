@@ -5,7 +5,7 @@ import { Maybe } from 'graphql/jsutils/Maybe';
 interface Options {
   source: string;
   variableValues?: Maybe<{ [key: string]: any }>;
-  userId?: number;
+  userId?: string;
   headers?: object;
 }
 

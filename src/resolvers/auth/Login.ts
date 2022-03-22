@@ -9,6 +9,7 @@ class LoginResolver {
   @Mutation(() => User, { nullable: true })
   async login(@Arg('usernameOrEmail') usernameOrEmail: string, @Arg('password') password: string, @Ctx() ctx: MyContext): Promise<User | null> {
     const user = usernameOrEmail.includes('@') ? await prisma.user.findUnique({ where: { email: usernameOrEmail } }) : await prisma.user.findUnique({ where: { username: usernameOrEmail } });
+
     if (!user) {
       return null;
     }

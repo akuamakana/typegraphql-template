@@ -33,17 +33,19 @@ describe('Register', () => {
       variableValues: userData,
     });
 
-    expect(data).toMatchObject({
-      data: {
-        register: {
-          email: 'jest@jest.com',
-          id: '1',
-          username: 'jest',
-          firstName: 'jest',
-          lastName: 'jest',
+    expect(data).toEqual(
+      expect.objectContaining({
+        data: {
+          register: {
+            email: 'jest@jest.com',
+            firstName: 'jest',
+            lastName: 'jest',
+            username: 'jest',
+            id: expect.stringContaining('-'),
+          },
         },
-      },
-    });
+      })
+    );
   });
 
   it('fails to create with duplicate email', async () => {

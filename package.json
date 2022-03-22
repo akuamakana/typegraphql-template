@@ -6,10 +6,10 @@
   "scripts": {
     "predev": "redis-server --daemonize yes",
     "pretest": "redis-server --daemonize yes",
-    "db:clear": "dotenv -e .env.development -- prisma migrate reset --force --skip-generate",
+    "db:clear": "dotenv -e .env.test -- prisma migrate reset --force",
     "db:migrate": "dotenv -e .env.development prisma migrate dev",
-    "test": "yarn db:clear && yarn test2",
-    "test2": "dotenv -e .env.test -- jest --runInBand",
+    "test": "yarn db:clear && yarn jest",
+    "jest": "dotenv -e .env.test -- jest --runInBand",
     "dev": "dotenv -e .env.development -- ts-node-dev --respawn -r tsconfig-paths/register src/index.ts"
   },
   "keywords": [],
